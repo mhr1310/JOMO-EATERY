@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order Management - Jomo Eatery Admin">
+    <title>Orders - Jomo Eatery Admin</title>
+    <link rel="stylesheet" href="admin.css?v=3">
+</head>
+
+<body class="admin-body">
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <div class="admin-logo">JOMO EATERY</div>
+                <div class="admin-role">Admin Panel</div>
+            </div>
+
+            <nav class="admin-nav">
+                <a href="admin-dashboard.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="admin-orders.html" class="admin-nav-item active">
+                    <span class="admin-nav-icon">📦</span>
+                    Orders
+                </a>
+                <a href="admin-menu.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">🍽️</span>
+                    Menu Management
+                </a>
+                <a href="admin-login.html" class="admin-nav-item"
+                    style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                    <span class="admin-nav-icon">🚪</span>
+                    Logout
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <div class="admin-header">
+                <div>
+                    <h1>Order Management</h1>
+                    <p style="color: var(--color-text-light); margin: 5px 0 0 0;">Manage and track all orders</p>
+                </div>
+                <div class="admin-user-info">
+                    <div class="admin-user-avatar">A</div>
+                </div>
+            </div>
+
+            <!-- Order Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Orders</div>
+                    <div class="stat-value">156</div>
+                    <div class="stat-change">This month</div>
+                </div>
+
+                <div class="stat-card warning">
+                    <div class="stat-label">Pending</div>
+                    <div class="stat-value">8</div>
+                    <div class="stat-change">Needs attention</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-label">Preparing</div>
+                    <div class="stat-value">5</div>
+                    <div class="stat-change">In progress</div>
+                </div>
+
+                <div class="stat-card success">
+                    <div class="stat-label">Completed Today</div>
+                    <div class="stat-value">34</div>
+                    <div class="stat-change">↑ 15% increase</div>
+                </div>
+            </div>
+
+            <!-- Orders Table with Filters -->
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h3 class="admin-card-title">All Orders</h3>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="Search orders..."
+                            style="padding: 8px 15px; border: 2px solid var(--color-gray-light); border-radius: var(--radius-md); font-size: 0.9rem;">
+                        <button class="admin-btn admin-btn-primary admin-btn-sm">Search</button>
+                    </div>
+                </div>
+
+                <!-- CSS-Only Filter Tabs -->
+                <div style="padding: 0 25px;">
+                    <div class="filter-tabs">
+                        <input type="radio" name="order-filter" id="filter-all" checked>
+                        <label for="filter-all">All Orders</label>
+
+                        <input type="radio" name="order-filter" id="filter-pending">
+                        <label for="filter-pending">Pending</label>
+
+                        <input type="radio" name="order-filter" id="filter-preparing">
+                        <label for="filter-preparing">Preparing</label>
+
+                        <input type="radio" name="order-filter" id="filter-completed">
+                        <label for="filter-completed">Completed</label>
+                    </div>
+
+                    <div class="content-area">
+                        <!-- All Orders Content -->
+                        <div class="filter-content">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Phone</th>
+                                        <th>Items</th>
+                                        <th>Total</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
+                                        <th>Time</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>#JE001</strong></td>
+                                        <td>Ahmad Hassan</td>
+                                        <td>+60 12-345 6789</td>
+                                        <td>3 items</td>
+                                        <td><strong>RM 68.00</strong></td>
+                                        <td>Delivery</td>
+                                        <td><span class="badge badge-pending">Pending</span></td>
+                                        <td>5 mins ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-success admin-btn-sm">Accept</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#JE002</strong></td>
+                                        <td>Sarah Lee</td>
+                                        <td>+60 19-876 5432</td>
+                                        <td>2 items</td>
+                                        <td><strong>RM 44.00</strong></td>
+                                        <td>Pickup</td>
+                                        <td><span class="badge badge-preparing">Preparing</span></td>
+                                        <td>12 mins ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-primary admin-btn-sm">Complete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#JE003</strong></td>
+                                        <td>Kumar Raja</td>
+                                        <td>+60 11-234 5678</td>
+                                        <td>5 items</td>
+                                        <td><strong>RM 120.00</strong></td>
+                                        <td>Dine-in</td>
+                                        <td><span class="badge badge-completed">Completed</span></td>
+                                        <td>45 mins ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#JE004</strong></td>
+                                        <td>Fatimah Ali</td>
+                                        <td>+60 13-567 8901</td>
+                                        <td>1 item</td>
+                                        <td><strong>RM 28.00</strong></td>
+                                        <td>Delivery</td>
+                                        <td><span class="badge badge-pending">Pending</span></td>
+                                        <td>8 mins ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-success admin-btn-sm">Accept</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#JE005</strong></td>
+                                        <td>Wei Chen</td>
+                                        <td>+60 17-890 1234</td>
+                                        <td>4 items</td>
+                                        <td><strong>RM 86.00</strong></td>
+                                        <td>Pickup</td>
+                                        <td><span class="badge badge-preparing">Preparing</span></td>
+                                        <td>20 mins ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-primary admin-btn-sm">Complete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pending Orders Content -->
+                        <div class="filter-content pending">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Phone</th>
+                                        <th>Items</th>
+                                        <th>Total</th>
+                                        <th>Type</th>
+                                        <th>Time</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>#JE001</strong></td>
+                                        <td>Ahmad Hassan</td>
+                                        <td>+60 12-345 6789</td>
+                                        <td>Pasta Carbonara, Cappuccino, Tiramisu</td>
+                                        <td><strong>RM 68.00</strong></td>
+                                        <td>Delivery</td>
+                                        <td>5 mins ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-success admin-btn-sm">Accept
+                                                Order</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#JE004</strong></td>
+                                        <td>Fatimah Ali</td>
+                                        <td>+60 13-567 8901</td>
+                                        <td>Grilled Chicken Steak</td>
+                                        <td><strong>RM 32.00</strong></td>
+                                        <td>Delivery</td>
+                                        <td>8 mins ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-success admin-btn-sm">Accept
+                                                Order</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#JE007</strong></td>
+                                        <td>John Tan</td>
+                                        <td>+60 14-678 9012</td>
+                                        <td>Gourmet Burger, Iced Latte</td>
+                                        <td><strong>RM 39.00</strong></td>
+                                        <td>Pickup</td>
+                                        <td>15 mins ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-success admin-btn-sm">Accept
+                                                Order</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Preparing Orders Content -->
+                        <div class="filter-content preparing">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Phone</th>
+                                        <th>Items</th>
+                                        <th>Total</th>
+                                        <th>Type</th>
+                                        <th>Started</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>#JE002</strong></td>
+                                        <td>Sarah Lee</td>
+                                        <td>+60 19-876 5432</td>
+                                        <td>Chocolate Cake, Cappuccino</td>
+                                        <td><strong>RM 30.00</strong></td>
+                                        <td>Pickup</td>
+                                        <td>12 mins ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-primary admin-btn-sm">Mark
+                                                Complete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#JE005</strong></td>
+                                        <td>Wei Chen</td>
+                                        <td>+60 17-890 1234</td>
+                                        <td>Fish & Chips, Iced Latte, Croissant, Tiramisu</td>
+                                        <td><strong>RM 67.00</strong></td>
+                                        <td>Pickup</td>
+                                        <td>20 mins ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-primary admin-btn-sm">Mark
+                                                Complete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Completed Orders Content -->
+                        <div class="filter-content completed">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Total</th>
+                                        <th>Type</th>
+                                        <th>Completed</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>#JE003</strong></td>
+                                        <td>Kumar Raja</td>
+                                        <td><strong>RM 120.00</strong></td>
+                                        <td>Dine-in</td>
+                                        <td>45 mins ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">View
+                                                Details</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#JE006</strong></td>
+                                        <td>Lisa Wong</td>
+                                        <td><strong>RM 56.00</strong></td>
+                                        <td>Delivery</td>
+                                        <td>1 hour ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">View
+                                                Details</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#JE008</strong></td>
+                                        <td>Raj Kumar</td>
+                                        <td><strong>RM 42.00</strong></td>
+                                        <td>Pickup</td>
+                                        <td>2 hours ago</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">View
+                                                Details</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

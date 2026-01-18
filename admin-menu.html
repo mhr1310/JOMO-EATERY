@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menu Management - Jomo Eatery Admin">
+    <title>Menu Management - Jomo Eatery Admin</title>
+    <link rel="stylesheet" href="admin.css?v=3">
+</head>
+
+<body class="admin-body">
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <div class="admin-logo">JOMO EATERY</div>
+                <div class="admin-role">Admin Panel</div>
+            </div>
+
+            <nav class="admin-nav">
+                <a href="admin-dashboard.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="admin-orders.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">📦</span>
+                    Orders
+                </a>
+                <a href="admin-menu.html" class="admin-nav-item active">
+                    <span class="admin-nav-icon">🍽️</span>
+                    Menu Management
+                </a>
+                <a href="admin-login.html" class="admin-nav-item"
+                    style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                    <span class="admin-nav-icon">🚪</span>
+                    Logout
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <div class="admin-header">
+                <div>
+                    <h1>Menu Management</h1>
+                    <p style="color: var(--color-text-light); margin: 5px 0 0 0;">Manage menu items and categories</p>
+                </div>
+                <div class="admin-user-info">
+                    <a href="#add-item" class="admin-btn admin-btn-primary admin-btn-sm">+ Add New Item</a>
+                </div>
+            </div>
+
+            <!-- Menu Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Items</div>
+                    <div class="stat-value">52</div>
+                    <div class="stat-change">Across all categories</div>
+                </div>
+
+                <div class="stat-card success">
+                    <div class="stat-label">Active Items</div>
+                    <div class="stat-value">49</div>
+                    <div class="stat-change">Available for order</div>
+                </div>
+
+                <div class="stat-card warning">
+                    <div class="stat-label">Low Stock</div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-change">Needs attention</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-label">Categories</div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-change">Main categories</div>
+                </div>
+            </div>
+
+            <!-- Menu Items Table with Filters -->
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h3 class="admin-card-title">Menu Items</h3>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="Search items..."
+                            style="padding: 8px 15px; border: 2px solid var(--color-gray-light); border-radius: var(--radius-md); font-size: 0.9rem;">
+                        <button class="admin-btn admin-btn-outline admin-btn-sm">Search</button>
+                    </div>
+                </div>
+
+                <!-- CSS-Only Category Filter -->
+                <div style="padding: 0 25px;">
+                    <div class="filter-tabs">
+                        <input type="radio" name="menu-filter" id="filter-all" checked>
+                        <label for="filter-all">All Items</label>
+
+                        <input type="radio" name="menu-filter" id="filter-western">
+                        <label for="filter-western">Western Food</label>
+
+                        <input type="radio" name="menu-filter" id="filter-desserts">
+                        <label for="filter-desserts">Desserts & Pastries</label>
+
+                        <input type="radio" name="menu-filter" id="filter-drinks">
+                        <label for="filter-drinks">Drinks & Coffee</label>
+                    </div>
+
+                    <div class="content-area">
+                        <!-- All Items -->
+                        <div class="filter-content">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Item Name</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                        <th>Orders (Today)</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="images/pasta_carbonara_1768749575350.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Pasta Carbonara</strong></td>
+                                        <td>Western Food</td>
+                                        <td><strong>RM 28.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>12</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                            <button class="admin-btn admin-btn-danger admin-btn-sm">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/grilled_chicken_1768749592405.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Grilled Chicken Steak</strong></td>
+                                        <td>Western Food</td>
+                                        <td><strong>RM 32.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>8</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                            <button class="admin-btn admin-btn-danger admin-btn-sm">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/beef_burger_1768749610325.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Gourmet Beef Burger</strong></td>
+                                        <td>Western Food</td>
+                                        <td><strong>RM 26.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>10</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                            <button class="admin-btn admin-btn-danger admin-btn-sm">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/chocolate_cake_1768749625682.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Chocolate Cake</strong></td>
+                                        <td>Desserts</td>
+                                        <td><strong>RM 18.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>9</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                            <button class="admin-btn admin-btn-danger admin-btn-sm">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/cappuccino_1768749675034.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Cappuccino</strong></td>
+                                        <td>Drinks</td>
+                                        <td><strong>RM 12.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>18</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                            <button class="admin-btn admin-btn-danger admin-btn-sm">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Western Food Only -->
+                        <div class="filter-content pending">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Item Name</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                        <th>Popularity</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="images/pasta_carbonara_1768749575350.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Pasta Carbonara</strong></td>
+                                        <td><strong>RM 28.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>High</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/grilled_chicken_1768749592405.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Grilled Chicken Steak</strong></td>
+                                        <td><strong>RM 32.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/beef_burger_1768749610325.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Gourmet Beef Burger</strong></td>
+                                        <td><strong>RM 26.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>High</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Desserts Only -->
+                        <div class="filter-content preparing">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Item Name</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                        <th>Stock</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="images/chocolate_cake_1768749625682.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Chocolate Cake</strong></td>
+                                        <td><strong>RM 18.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>Available</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/tiramisu_1768749643750.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Tiramisu</strong></td>
+                                        <td><strong>RM 16.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>Available</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/croissant_1768749660024.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Butter Croissant</strong></td>
+                                        <td><strong>RM 8.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>Low Stock</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Drinks Only -->
+                        <div class="filter-content completed">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Item Name</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                        <th>Daily Orders</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="images/cappuccino_1768749675034.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Cappuccino</strong></td>
+                                        <td><strong>RM 12.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>18</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/cappuccino_1768749675034.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Café Latte</strong></td>
+                                        <td><strong>RM 12.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>15</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/iced_latte_1768749689942.png"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                        </td>
+                                        <td><strong>Iced Latte</strong></td>
+                                        <td><strong>RM 13.00</strong></td>
+                                        <td><span class="badge badge-active">Active</span></td>
+                                        <td>12</td>
+                                        <td>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add New Item Form (Hidden by default, shown when #add-item is targeted) -->
+            <div id="add-item" class="admin-card" style="display: none; margin-top: 30px;">
+                <div class="admin-card-header">
+                    <h3 class="admin-card-title">Add New Menu Item</h3>
+                    <a href="#" class="admin-btn admin-btn-outline admin-btn-sm">Cancel</a>
+                </div>
+                <div class="admin-card-body">
+                    <form style="max-width: 800px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="admin-form-group">
+                                <label for="item-name" class="admin-form-label">Item Name *</label>
+                                <input type="text" id="item-name" class="admin-form-input" placeholder="Enter item name"
+                                    required>
+                            </div>
+
+                            <div class="admin-form-group">
+                                <label for="item-category" class="admin-form-label">Category *</label>
+                                <select id="item-category" class="admin-form-select" required>
+                                    <option value="">Select category</option>
+                                    <option value="western">Western Food</option>
+                                    <option value="desserts">Desserts & Pastries</option>
+                                    <option value="drinks">Drinks & Coffee</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="admin-form-group">
+                            <label for="item-description" class="admin-form-label">Description *</label>
+                            <textarea id="item-description" class="admin-form-textarea"
+                                placeholder="Enter item description" required></textarea>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="admin-form-group">
+                                <label for="item-price" class="admin-form-label">Price (RM) *</label>
+                                <input type="number" id="item-price" class="admin-form-input" placeholder="0.00"
+                                    step="0.01" min="0" required>
+                            </div>
+
+                            <div class="admin-form-group">
+                                <label for="item-status" class="admin-form-label">Status *</label>
+                                <select id="item-status" class="admin-form-select" required>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="admin-form-group">
+                            <label for="item-image" class="admin-form-label">Item Image</label>
+                            <input type="file" id="item-image" class="admin-form-input" accept="image/*">
+                            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 5px;">Recommended:
+                                800x600px, JPG or PNG</p>
+                        </div>
+
+                        <div style="display: flex; gap: 15px; margin-top: 30px;">
+                            <button type="submit" class="admin-btn admin-btn-success">Add Menu Item</button>
+                            <a href="#" class="admin-btn admin-btn-outline">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Make form visible when targeted -->
+            <style>
+                #add-item:target {
+                    display: block !important;
+                }
+            </style>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reserve a table at Jomo Eatery Kuala Nerus - Book your dining experience">
+    <title>Reservation - Jomo Eatery Kuala Nerus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">JOMO EATERY</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reservation.html" class="active">Reservation</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Reservation Header -->
+    <section class="section" style="margin-top: 70px; padding-top: 80px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Reserve Your Table</h2>
+                <p>Secure your spot at Jomo Eatery</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Form -->
+    <section class="section" style="padding-top: 20px; background-color: #fff;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="card" style="padding: 40px;">
+                    <h3 style="margin-bottom: 30px; color: #5D4E37; text-align: center;">Book Your Experience</h3>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-input"
+                                placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+60 12-345 6789"
+                                required>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label for="date" class="form-label">Reservation Date *</label>
+                                <input type="date" id="date" name="date" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="time" class="form-label">Reservation Time *</label>
+                                <input type="time" id="time" name="time" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests" class="form-label">Number of Guests *</label>
+                            <select id="guests" name="guests" class="form-select" required>
+                                <option value="">Select number of guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7 Guests</option>
+                                <option value="8">8 Guests</option>
+                                <option value="more">More than 8 (please specify in special requests)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="requests" class="form-label">Special Requests (Optional)</label>
+                            <textarea id="requests" name="requests" class="form-textarea"
+                                placeholder="Let us know about any dietary restrictions, allergies, special occasions, or seating preferences..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary form-submit">Submit Reservation</button>
+
+                        <p style="text-align: center; font-size: 0.9rem; color: #6B6B6B; margin-top: 20px;">
+                            * Required fields. We'll confirm your reservation via email or phone.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Before You Reserve</h2>
+                <p>Important information about reservations</p>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="card-title">Operating Hours</h4>
+                        <p class="card-description">
+                            <strong>Monday - Friday:</strong> 8:00 AM - 10:00 PM<br>
+                            <strong>Saturday - Sunday:</strong> 9:00 AM - 11:00 PM<br>
+                            <strong>Public Holidays:</strong> 9:00 AM - 11:00 PM
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="card-title">Reservation Policy</h4>
+                        <p class="card-description">
+                            • Reservations are held for 15 minutes past the booking time<br>
+                            • For groups of 9 or more, please call us directly<br>
+                            • Cancellations should be made at least 2 hours in advance
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="card-title">Contact for Inquiries</h4>
+                        <p class="card-description">
+                            If you have questions about your reservation or need to make changes, feel free to contact
+                            us at:<br><br>
+                            <strong>Phone:</strong> +60 9-123 4567<br>
+                            <strong>Email:</strong> reservations@jomoeatery.com
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="card-title">Walk-ins Welcome</h4>
+                        <p class="card-description">
+                            While we encourage reservations to guarantee your table, walk-in guests are always welcome!
+                            We'll do our best to accommodate you based on availability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info -->
+    <section class="section" style="background-color: #fff;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 style="margin-bottom: 20px;">Private Events & Catering</h2>
+                <p style="font-size: 1.1rem; color: #6B6B6B; margin-bottom: 30px;">
+                    Planning a special celebration, corporate event, or private gathering? Jomo Eatery offers
+                    customizable packages for groups and special occasions. Contact us to discuss your event needs and
+                    let us create a memorable experience for you and your guests.
+                </p>
+                <a href="contact.html" class="btn btn-primary">Contact Us for Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Online CTA -->
+    <section
+        style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); padding: 60px 20px; text-align: center; color: var(--color-white);">
+        <div class="container">
+            <h2 style="color: var(--color-white); margin-bottom: 15px;">Prefer Takeaway or Delivery?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.95;">Order online for a hassle-free experience
+            </p>
+            <a href="order.html" class="btn"
+                style="background: var(--color-white); color: var(--color-primary); padding: 15px 40px; font-size: 1.1rem; font-weight: 600;">Order
+                Online Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">JOMO EATERY</div>
+        <p>&copy; 2026 Jomo Eatery Kuala Nerus. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Jomo Eatery Kuala Nerus - Location, hours, phone, and email">
+    <title>Contact - Jomo Eatery Kuala Nerus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">JOMO EATERY</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Header -->
+    <section class="section" style="margin-top: 70px; padding-top: 80px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>We'd love to hear from you</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Cards -->
+    <section class="section" style="padding-top: 20px;">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Location -->
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p style="color: #6B6B6B; line-height: 1.8;">
+                        Jomo Eatery Kuala Nerus<br>
+                        123 Jalan Sultan Zainal Abidin<br>
+                        Kuala Nerus, 21300<br>
+                        Terengganu, Malaysia
+                    </p>
+                </div>
+
+                <!-- Opening Hours -->
+                <div class="contact-card">
+                    <div class="contact-icon">🕐</div>
+                    <h3>Opening Hours</h3>
+                    <p style="color: #6B6B6B; line-height: 1.8;">
+                        <strong>Monday - Friday</strong><br>
+                        8:00 AM - 10:00 PM<br><br>
+                        <strong>Saturday - Sunday</strong><br>
+                        9:00 AM - 11:00 PM
+                    </p>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Contact Details</h3>
+                    <p style="color: #6B6B6B; line-height: 1.8;">
+                        <strong>Phone:</strong><br>
+                        +60 9-123 4567<br><br>
+                        <strong>Email:</strong><br>
+                        info@jomoeatery.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Maps -->
+    <section class="section" style="background-color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Us</h2>
+                <p>Visit us at our location in Kuala Nerus</p>
+            </div>
+
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.8237395134734!2d103.12034431475399!3d5.352999196256267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cf7f7b3e7e7e7d%3A0x7e7e7e7e7e7e7e7e!2sKuala%20Nerus%2C%20Terengganu%2C%20Malaysia!5e0!3m2!1sen!2smy!4v1234567890123!5m2!1sen!2smy"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://www.google.com/maps/dir//Kuala+Nerus,+Terengganu" target="_blank"
+                    class="btn btn-primary">Get Directions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Send Us a Message</h2>
+                <p>Have questions? We're here to help</p>
+            </div>
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="card" style="padding: 40px;">
+                    <form>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+60 12-345 6789">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <select id="subject" name="subject" class="form-select" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="reservation">Reservation Question</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="catering">Catering & Events</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message *</label>
+                            <textarea id="message" name="message" class="form-textarea"
+                                placeholder="Tell us what's on your mind..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+
+                        <p style="text-align: center; font-size: 0.9rem; color: #6B6B6B; margin-top: 20px;">
+                            We typically respond within 24 hours during business days.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info -->
+    <section class="section" style="background-color: #fff;">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="card-title">Parking Information</h4>
+                        <p class="card-description">
+                            Ample parking space is available on-site for our customers. We have dedicated parking spots
+                            right in front of the café for your convenience. Street parking is also available nearby.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="card-title">Accessibility</h4>
+                        <p class="card-description">
+                            Jomo Eatery is fully wheelchair accessible with ramp access at the entrance. We also have
+                            accessible restroom facilities and spacious seating arrangements to accommodate all guests
+                            comfortably.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="card-title">WiFi & Workspace</h4>
+                        <p class="card-description">
+                            Free high-speed WiFi is available throughout the café. We welcome remote workers and
+                            students - feel free to use our space for productive work sessions while enjoying our coffee
+                            and food.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="card-title">Group Bookings</h4>
+                        <p class="card-description">
+                            Planning an event or celebration? We can accommodate groups of various sizes. Contact us in
+                            advance to discuss your requirements and we'll ensure your gathering is a success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2 style="margin-bottom: 20px;">Ready to Visit?</h2>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; color: #6B6B6B;">
+                    We look forward to welcoming you to Jomo Eatery. Reserve your table now or drop by for a spontaneous
+                    visit!
+                </p>
+                <div class="btn-group">
+                    <a href="reservation.html" class="btn btn-primary">Make a Reservation</a>
+                    <a href="menu.html" class="btn btn-outline" style="border-color: #8B6F47; color: #8B6F47;">View
+                        Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Online CTA -->
+    <section
+        style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); padding: 60px 20px; text-align: center; color: var(--color-white);">
+        <div class="container">
+            <h2 style="color: var(--color-white); margin-bottom: 15px;">Skip the Call, Order Online!</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.95;">Quick, easy, and convenient ordering at
+                your fingertips</p>
+            <a href="order.html" class="btn"
+                style="background: var(--color-white); color: var(--color-primary); padding: 15px 40px; font-size: 1.1rem; font-weight: 600;">Order
+                Online Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">JOMO EATERY</div>
+        <p>&copy; 2026 Jomo Eatery Kuala Nerus. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

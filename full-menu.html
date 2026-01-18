@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete Digital Menu - Jomo Eatery Kuala Nerus">
+    <title>Full Menu - Jomo Eatery Kuala Nerus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="order.css">
+    <style>
+        .menu-header {
+            text-align: center;
+            padding: 100px 20px 40px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            color: var(--color-white);
+        }
+
+        .menu-header h1 {
+            color: var(--color-white);
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .menu-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .menu-category-section {
+            margin-bottom: 60px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--color-primary);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+        }
+
+        .category-title {
+            flex: 1;
+        }
+
+        .category-title h2 {
+            color: var(--color-accent);
+            margin: 0 0 5px 0;
+        }
+
+        .category-time {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            font-weight: 600;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: var(--color-white);
+            border: 2px solid var(--color-gray-light);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+
+        .menu-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .item-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .item-badge.signature {
+            background: #DC2626;
+        }
+
+        .item-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 8px;
+            padding-right: 60px;
+        }
+
+        .item-description {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid var(--color-gray-light);
+        }
+
+        .item-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .qty-label {
+            font-size: 0.9rem;
+            color: var(--color-text-dark);
+            font-weight: 600;
+        }
+
+        .qty-control {
+            display: flex;
+            align-items: center;
+            border: 2px solid var(--color-gray-light);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .qty-btn {
+            padding: 6px 12px;
+            background: var(--color-background);
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--color-accent);
+            transition: background var(--transition-fast);
+        }
+
+        .qty-btn:hover {
+            background: var(--color-gray-light);
+        }
+
+        .qty-input {
+            width: 40px;
+            text-align: center;
+            border: none;
+            border-left: 1px solid var(--color-gray-light);
+            border-right: 1px solid var(--color-gray-light);
+            padding: 6px;
+            font-weight: 600;
+        }
+
+        .add-order-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            margin-top: 12px;
+        }
+
+        .add-order-btn:hover {
+            background: var(--color-accent);
+            transform: scale(1.02);
+        }
+
+        .pricing-note {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 20px;
+            margin: 40px 0;
+            border-radius: var(--radius-md);
+        }
+
+        .pricing-note strong {
+            color: #92400E;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .pricing-note p {
+            color: #78350F;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .subcategory {
+            background: var(--color-background);
+            padding: 12px 20px;
+            border-radius: var(--radius-md);
+            margin: 20px 0 15px;
+        }
+
+        .subcategory h3 {
+            color: var(--color-accent);
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu-header h1 {
+                font-size: 2rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">JOMO EATERY</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="full-menu.html" class="active">Full Menu</a></li>
+                <li><a href="order.html">Order Online</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <h1>Our Complete Menu</h1>
+        <p>Discover our full selection of Western cuisine, specialty coffee, and more</p>
+    </section>
+
+    <!-- Menu Container -->
+    <div class="menu-container">
+
+        <!-- BRUNCH CATEGORY -->
+        <section class="menu-category-section">
+            <div class="category-header">
+                <span class="category-icon">🥞</span>
+                <div class="category-title">
+                    <h2>BRUNCH</h2>
+                    <div class="category-time">Available: 10:00 AM – 3:00 PM</div>
+                </div>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <span class="item-badge signature">SIGNATURE</span>
+                    <div class="item-name">Nasi Lemak Jomo</div>
+                    <div class="item-description">Signature Brunch, 10AM–3PM only</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 32</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Jomo's Brekkie</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 35</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-badge">NEW</span>
+                    <div class="item-name">Smoked Salmon Toast</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 36</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Croissant Omelette</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 29</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Crispy Chicken & Waffle</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 28</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN COURSE CATEGORY -->
+        <section class="menu-category-section">
+            <div class="category-header">
+                <span class="category-icon">🍽️</span>
+                <div class="category-title">
+                    <h2>MAIN COURSE</h2>
+                    <div class="category-time">Available: 11:00 AM – 11:00 PM</div>
+                </div>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">Ribeye Steak</div>
+                    <div class="item-description">Angus Beef Ribeye 260g–300g</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 99</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Moroccan Lamb Shank</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 65</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-badge">NEW</span>
+                    <div class="item-name">Salmon Fillet</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 48</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Fish & Chips</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 28</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Thai Chilli Lamb Rice</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 39</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Harimanada Oyster</div>
+                    <div class="item-description">3 pcs / 6 pcs / 10 pcs available</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 50 - 130</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PASTA CATEGORY -->
+        <section class="menu-category-section">
+            <div class="category-header">
+                <span class="category-icon">🍝</span>
+                <div class="category-title">
+                    <h2>PASTA</h2>
+                    <div class="category-time">Available: 11:00 AM – 11:00 PM</div>
+                </div>
+            </div>
+
+            <!-- Aglio Olio -->
+            <div class="subcategory">
+                <h3>Aglio Olio</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">Seafood Aglio Olio</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 38</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Grilled Chicken Aglio Olio</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 33</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+
+            <!-- Carbonara -->
+            <div class="subcategory">
+                <h3>Carbonara</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">Smoked Beef Carbonara</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 33</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Crispy Chicken Carbonara</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 28</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+
+            <!-- Salted Egg -->
+            <div class="subcategory">
+                <h3>Salted Egg Pasta</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">Prawn Salted Egg Pasta</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 38</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Soft Shell Crab Salted Egg</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 36</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BURGERS & SANDWICHES -->
+        <section class="menu-category-section">
+            <div class="category-header">
+                <span class="category-icon">🍔</span>
+                <div class="category-title">
+                    <h2>BURGERS & SANDWICHES</h2>
+                    <div class="category-time">Available: 11:00 AM – 11:00 PM</div>
+                </div>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">Ribeye Beef Burger</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 42</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-badge">NEW</span>
+                    <div class="item-name">Prawn Toast</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 38</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Panini Chicken Sandwich</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 35</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Korean Chicken Burger</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 26</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SALADS -->
+        <section class="menu-category-section">
+            <div class="category-header">
+                <span class="category-icon">🥗</span>
+                <div class="category-title">
+                    <h2>SALADS</h2>
+                    <div class="category-time">Available: 11:00 AM – 11:00 PM</div>
+                </div>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">Salmon Nicoise Salad</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 36</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Asian Chicken & Seafood Salad</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 32</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Grilled Chicken Caesar Salad</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 30</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHARING MENU -->
+        <section class="menu-category-section">
+            <div class="category-header">
+                <span class="category-icon">🍟</span>
+                <div class="category-title">
+                    <h2>SHARING MENU</h2>
+                    <div class="category-time">Available: 11:00 AM – 11:00 PM</div>
+                </div>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">Buttermilk Chilli Seafood</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 42</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-badge">NEW</span>
+                    <div class="item-name">Mushroom Soup</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 25</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Let's Get Fried!</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 25</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-badge">NEW</span>
+                    <div class="item-name">Corn Ribs</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 15</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BEVERAGES -->
+        <section class="menu-category-section">
+            <div class="category-header">
+                <span class="category-icon">☕</span>
+                <div class="category-title">
+                    <h2>BEVERAGES</h2>
+                    <div class="category-time">Available All Day</div>
+                </div>
+            </div>
+
+            <!-- Coffee -->
+            <div class="subcategory">
+                <h3>Coffee (Iced / Hot)</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">Jomo's Latte</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 15</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Cappuccino</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 13</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Caramel Macchiato</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 15</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Mocha</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 15</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+
+            <!-- Matcha Series -->
+            <div class="subcategory">
+                <h3>Matcha Series (Ceremonial)</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">Matcha Latte</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 15</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-badge">NEW</span>
+                    <div class="item-name">Strawberry / Mango / Lychee Matcha</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 18</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+
+            <!-- Smoothie & Frappe -->
+            <div class="subcategory">
+                <h3>Smoothie & Frappe (Cold Only)</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">Green Cooler Smoothie</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 15</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Caramel Macchiato Frappe</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 17</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Matcha Frappe</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 17</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+
+            <!-- Kombuch & Juice -->
+            <div class="subcategory">
+                <h3>Kombucha & Fresh Juice</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <span class="item-badge">NEW</span>
+                    <div class="item-name">Kombucha</div>
+                    <div class="item-description">Melon Rush / Berry Bliss / Mango Breeze</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 13</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Fresh Juice</div>
+                    <div class="item-description">Green Apple / Orange</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 17</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-name">Mocktail (Iced)</div>
+                    <div class="item-description">Pomegranate / Yuzu</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 12</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+
+            <!-- Premium Tea -->
+            <div class="subcategory">
+                <h3>Premium Tea (Dine-In Only)</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">Premium Tea</div>
+                    <div class="item-description">Chamomile / Jasmine Queen / Breakfast Earl Grey</div>
+                    <div class="item-footer">
+                        <div class="item-price">RM 15</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <span class="qty-label">Qty:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn">−</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-order-btn">Add to Order</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Note -->
+        <div class="pricing-note">
+            <strong>⚠️ Important Pricing Information</strong>
+            <p>All prices are inclusive of 6% SST and 6% Service Charge for dine-in customers, and inclusive of 6% SST
+                for take-away orders only, unless otherwise stated.</p>
+        </div>
+
+    </div>
+
+    <!-- Order Online CTA -->
+    <section
+        style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); padding: 60px 20px; text-align: center; color: var(--color-white);">
+        <div class="container">
+            <h2 style="color: var(--color-white); margin-bottom: 15px;">Found Your Favorites?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.95;">Order now and get your food delivered
+                fresh</p>
+            <a href="order.html" class="btn"
+                style="background: var(--color-white); color: var(--color-primary); padding: 15px 40px; font-size: 1.1rem; font-weight: 600;">Order
+                Online Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">JOMO EATERY</div>
+        <p>&copy; 2026 Jomo Eatery Kuala Nerus. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

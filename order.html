@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order online from Jomo Eatery Kuala Nerus">
+    <title>Order Online - Jomo Eatery Kuala Nerus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="order.css?v=2">
+    <script src="order.js" defer></script>
+    <script src="qr-handler.js" defer></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">JOMO EATERY</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html" class="active">Order Online</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Order Container -->
+    <div class="order-container">
+        <!-- Main Menu Section -->
+        <div class="order-main">
+            <h1 style="color: var(--color-accent); margin-bottom: 10px;">Order Online</h1>
+            <p style="color: var(--color-text-light); margin-bottom: 30px;">Browse our menu and select items to add to
+                your cart</p>
+
+            <!-- Category Tabs (CSS-Only Navigation) -->
+            <div class="category-tabs">
+                <input type="radio" name="category" id="tab-all" checked>
+                <label for="tab-all">All Items</label>
+
+                <input type="radio" name="category" id="tab-western">
+                <label for="tab-western">Western Food</label>
+
+                <input type="radio" name="category" id="tab-desserts">
+                <label for="tab-desserts">Desserts & Pastries</label>
+
+                <input type="radio" name="category" id="tab-drinks">
+                <label for="tab-drinks">Drinks & Coffee</label>
+            </div>
+
+            <!-- Menu Items -->
+            <div class="menu-items">
+                <!-- Western Food Items -->
+                <div class="menu-category western">
+                    <div class="menu-item-card">
+                        <img src="images/pasta_carbonara_1768749575350.png" alt="Pasta Carbonara"
+                            class="menu-item-image">
+                        <h3 class="menu-item-name">Pasta Carbonara</h3>
+                        <p class="menu-item-description">Creamy Italian pasta with crispy bacon and parmesan cheese</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">RM 28.00</span>
+                            <div class="add-to-cart-wrapper">
+                                <input type="checkbox" id="item-1" class="add-to-cart-checkbox">
+                                <label for="item-1" class="add-to-cart-btn">Add to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category western">
+                    <div class="menu-item-card">
+                        <img src="images/grilled_chicken_1768749592405.png" alt="Grilled Chicken Steak"
+                            class="menu-item-image">
+                        <h3 class="menu-item-name">Grilled Chicken Steak</h3>
+                        <p class="menu-item-description">Tender chicken breast with vegetables and mashed potatoes</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">RM 32.00</span>
+                            <div class="add-to-cart-wrapper">
+                                <input type="checkbox" id="item-2" class="add-to-cart-checkbox">
+                                <label for="item-2" class="add-to-cart-btn">Add to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category western">
+                    <div class="menu-item-card">
+                        <img src="images/beef_burger_1768749610325.png" alt="Gourmet Beef Burger"
+                            class="menu-item-image">
+                        <h3 class="menu-item-name">Gourmet Beef Burger</h3>
+                        <p class="menu-item-description">Juicy beef patty with cheese and crispy fries</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">RM 26.00</span>
+                            <div class="add-to-cart-wrapper">
+                                <input type="checkbox" id="item-3" class="add-to-cart-checkbox">
+                                <label for="item-3" class="add-to-cart-btn">Add to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category western">
+                    <div class="menu-item-card">
+                        <img src="images/grilled_chicken_1768749592405.png" alt="Fish & Chips" class="menu-item-image">
+                        <h3 class="menu-item-name">Fish & Chips</h3>
+                        <p class="menu-item-description">Crispy battered fish with golden fries and tartar sauce</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">RM 30.00</span>
+                            <div class="add-to-cart-wrapper">
+                                <input type="checkbox" id="item-4" class="add-to-cart-checkbox">
+                                <label for="item-4" class="add-to-cart-btn">Add to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts Items -->
+                <div class="menu-category desserts">
+                    <div class="menu-item-card">
+                        <img src="images/chocolate_cake_1768749625682.png" alt="Chocolate Cake" class="menu-item-image">
+                        <h3 class="menu-item-name">Chocolate Cake</h3>
+                        <p class="menu-item-description">Rich chocolate cake with velvety ganache</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">RM 18.00</span>
+                            <div class="add-to-cart-wrapper">
+                                <input type="checkbox" id="item-5" class="add-to-cart-checkbox">
+                                <label for="item-5" class="add-to-cart-btn">Add to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category desserts">
+                    <div class="menu-item-card">
+                        <img src="images/tiramisu_1768749643750.png" alt="Tiramisu" class="menu-item-image">
+                        <h3 class="menu-item-name">Tiramisu</h3>
+                        <p class="menu-item-description">Classic Italian dessert with coffee and mascarpone</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">RM 16.00</span>
+                            <div class="add-to-cart-wrapper">
+                                <input type="checkbox" id="item-6" class="add-to-cart-checkbox">
+                                <label for="item-6" class="add-to-cart-btn">Add to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category desserts">
+                    <div class="menu-item-card">
+                        <img src="images/croissant_1768749660024.png" alt="Butter Croissant" class="menu-item-image">
+                        <h3 class="menu-item-name">Butter Croissant</h3>
+                        <p class="menu-item-description">Freshly baked flaky French pastry</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">RM 8.00</span>
+                            <div class="add-to-cart-wrapper">
+                                <input type="checkbox" id="item-7" class="add-to-cart-checkbox">
+                                <label for="item-7" class="add-to-cart-btn">Add to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks Items -->
+                <div class="menu-category drinks">
+                    <div class="menu-item-card">
+                        <img src="images/cappuccino_1768749675034.png" alt="Cappuccino" class="menu-item-image">
+                        <h3 class="menu-item-name">Cappuccino</h3>
+                        <p class="menu-item-description">Espresso with steamed milk and rich foam</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">RM 12.00</span>
+                            <div class="add-to-cart-wrapper">
+                                <input type="checkbox" id="item-8" class="add-to-cart-checkbox">
+                                <label for="item-8" class="add-to-cart-btn">Add to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category drinks">
+                    <div class="menu-item-card">
+                        <img src="images/cappuccino_1768749675034.png" alt="Café Latte" class="menu-item-image">
+                        <h3 class="menu-item-name">Café Latte</h3>
+                        <p class="menu-item-description">Smooth espresso blended with steamed milk</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">RM 12.00</span>
+                            <div class="add-to-cart-wrapper">
+                                <input type="checkbox" id="item-9" class="add-to-cart-checkbox">
+                                <label for="item-9" class="add-to-cart-btn">Add to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category drinks">
+                    <div class="menu-item-card">
+                        <img src="images/iced_latte_1768749689942.png" alt="Iced Latte" class="menu-item-image">
+                        <h3 class="menu-item-name">Iced Latte</h3>
+                        <p class="menu-item-description">Refreshing cold espresso with milk over ice</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">RM 13.00</span>
+                            <div class="add-to-cart-wrapper">
+                                <input type="checkbox" id="item-10" class="add-to-cart-checkbox">
+                                <label for="item-10" class="add-to-cart-btn">Add to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category drinks">
+                    <div class="menu-item-card">
+                        <img src="images/cappuccino_1768749675034.png" alt="Mocha" class="menu-item-image">
+                        <h3 class="menu-item-name">Mocha</h3>
+                        <p class="menu-item-description">Espresso with chocolate and whipped cream</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">RM 14.00</span>
+                            <div class="add-to-cart-wrapper">
+                                <input type="checkbox" id="item-11" class="add-to-cart-checkbox">
+                                <label for="item-11" class="add-to-cart-btn">Add to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Sidebar -->
+        <div class="order-sidebar">
+            <div class="cart-container">
+                <div class="cart-header">
+                    <h3>Your Order</h3>
+                    <span class="cart-count">0</span>
+                </div>
+
+                <div class="cart-body">
+                    <div class="cart-empty">
+                        <div class="cart-empty-icon">🛒</div>
+                        <p>Your cart is empty</p>
+                        <p style="font-size: 0.9rem;">Add items from the menu to get started!</p>
+                    </div>
+
+                    <!-- Sample cart items (shown for demonstration) -->
+                    <!-- In real implementation, these would be shown/hidden based on checkbox states -->
+                    <!--
+                    <div class="cart-item">
+                        <img src="images/pasta_carbonara_1768749575350.png" alt="Pasta" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">Pasta Carbonara</div>
+                            <div class="cart-item-quantity">Qty: 1</div>
+                            <div class="cart-item-price">RM 28.00</div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <span class="cart-total-label">Total:</span>
+                        <span class="cart-total-amount">RM 0.00</span>
+                    </div>
+                    <a href="#checkout" class="checkout-btn">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Section (Hidden by default, shown when #checkout is targeted) -->
+    <div id="checkout" class="checkout-section">
+        <div class="container">
+            <div class="checkout-header">
+                <h2>Checkout</h2>
+                <p style="color: var(--color-text-light);">Complete your order</p>
+            </div>
+
+            <div class="checkout-steps">
+                <div class="checkout-step active">
+                    <div class="checkout-step-number">1</div>
+                    <span>Your Info</span>
+                </div>
+                <div class="checkout-step">
+                    <div class="checkout-step-number">2</div>
+                    <span>Delivery</span>
+                </div>
+                <div class="checkout-step">
+                    <div class="checkout-step-number">3</div>
+                    <span>Payment</span>
+                </div>
+            </div>
+
+            <form class="checkout-form">
+                <h3 class="checkout-section-title">Contact Information</h3>
+
+                <div class="form-group">
+                    <label for="co-name" class="form-label">Full Name *</label>
+                    <input type="text" id="co-name" class="form-input" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="co-email" class="form-label">Email *</label>
+                    <input type="email" id="co-email" class="form-input" placeholder="your.email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="co-phone" class="form-label">Phone Number *</label>
+                    <input type="tel" id="co-phone" class="form-input" placeholder="+60 12-345 6789" required>
+                </div>
+
+                <h3 class="checkout-section-title">Delivery Details</h3>
+
+                <div class="form-group">
+                    <label for="co-type" class="form-label">Order Type *</label>
+                    <select id="co-type" class="form-select" required>
+                        <option value="">Select order type</option>
+                        <option value="delivery">Delivery</option>
+                        <option value="pickup">Pickup</option>
+                        <option value="dinein">Dine-in</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="co-address" class="form-label">Delivery Address</label>
+                    <textarea id="co-address" class="form-textarea"
+                        placeholder="Enter delivery address (if applicable)"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="co-notes" class="form-label">Special Instructions</label>
+                    <textarea id="co-notes" class="form-textarea"
+                        placeholder="Any dietary restrictions or special requests?"></textarea>
+                </div>
+
+                <h3 class="checkout-section-title">Payment Method</h3>
+
+                <div class="form-group">
+                    <label for="co-payment" class="form-label">Payment Method *</label>
+                    <select id="co-payment" class="form-select" required>
+                        <option value="">Select payment method</option>
+                        <option value="cash">Cash on Delivery</option>
+                        <option value="card">Credit/Debit Card</option>
+                        <option value="ewallet">E-Wallet</option>
+                    </select>
+                </div>
+
+                <div style="margin-top: 30px; display: flex; gap: 15px;">
+                    <a href="#"
+                        style="flex: 1; padding: 15px; background-color: var(--color-gray-light); color: var(--color-text-dark); text-align: center; border-radius: var(--radius-md); font-weight: 600; text-decoration: none;">Back
+                        to Menu</a>
+                    <a href="#confirmation" style="flex: 1;" class="checkout-btn">Place Order</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Confirmation (Hidden by default, shown when #confirmation is targeted) -->
+    <div id="confirmation" class="order-confirmation">
+        <div class="container">
+            <div class="confirmation-icon">✅</div>
+            <div class="confirmation-message">
+                <h2>Order Placed Successfully!</h2>
+                <p>Thank you for your order. We've received it and will start preparing shortly.</p>
+                <div class="order-number">Order #JE2026-001</div>
+                <p>You will receive a confirmation email at your registered email address.</p>
+                <p style="margin-top: 30px;">
+                    <strong>Estimated Delivery Time:</strong> 30-45 minutes
+                </p>
+            </div>
+            <div style="margin-top: 40px;">
+                <a href="order.html" class="btn btn-primary">Place Another Order</a>
+                <a href="index.html" style="margin-left: 15px;" class="btn btn-outline"
+                    style="border-color: var(--order-primary); color: var(--order-primary);">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">JOMO EATERY</div>
+        <p>&copy; 2026 Jomo Eatery Kuala Nerus. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
